@@ -2,6 +2,8 @@ package _03_Intro_to_Scanners;
 
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class ScannerDemo {
 
     /*
@@ -13,7 +15,7 @@ public class ScannerDemo {
     public static void main(String[] args) {
         /*
          * 1. Create an object of the Scanner class.
-         * 
+     
          * Note: You will need to pass System.in to the constructor(no quotes).
          * 
          * You might notice this looks similar to System.out which you use for
@@ -25,7 +27,7 @@ public class ScannerDemo {
          * are running your program or the input/output stream you are using.
          */
 
-        
+        Scanner scanner = new Scanner(System.in);
         
         /*
          * 2. Use a syso to ask the user for their name and then use the Scanner
@@ -41,7 +43,8 @@ public class ScannerDemo {
          * Note: Don't forget to save the results of next() or nextLine() into a
          * String variable.
          */
-
+System.out.println("What is your name?");
+String name = scanner.nextLine();
         
         
         /*
@@ -51,7 +54,8 @@ public class ScannerDemo {
          * See if you can find the scanner method that does this without relying
          * on Integer.parseInt().
          */
-
+System.out.println("How old are you?");
+int age = scanner.nextInt();
         
         
         /*
@@ -64,7 +68,10 @@ public class ScannerDemo {
 
         // 5.) Print the user's data to the console nicely formatted.
 
+        System.out.println("What is your favorite number, with two decimal places like 3.14?");
+        double pi = scanner.nextDouble();
         
+        System.out.println("Hi " +  name + ", You are " + age+ " years old and your favorite number with decimals is " + pi + "!");
         
         /*
          * 6.) Close your scanner to avoid memory leaks.
@@ -72,7 +79,7 @@ public class ScannerDemo {
          * Note: When using a Scanner with the System.in input stream in larger
          * programs only close the scanner when your program is completely done.
          */
-
+scanner.close();
     }
 
 }

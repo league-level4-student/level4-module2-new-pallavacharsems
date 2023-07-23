@@ -34,12 +34,12 @@ public class GoShopping {
 		// 8. Repeat steps 2-5 for a Clothing Cart and a Toy Cart
 		Cart <Clothing >clothingcart = new Cart <Clothing>();
 		Cart <Toy >toycart = new Cart <Toy>();
-		clothingcart.add(new Toy());
-		clothingcart.add(new Toy());
-		clothingcart.add(new Toy());
-		toycart.add(new Clothing());
-		toycart.add(new Clothing());
-		toycart.add(new Clothing());
+		clothingcart.add(new Clothing());
+		clothingcart.add(new Clothing());
+		clothingcart.add(new Clothing());
+		toycart.add(new Toy());
+		toycart.add(new Toy());
+		toycart.add(new Toy());
 		
 		clothingcart.showCart();
 		toycart.showCart();

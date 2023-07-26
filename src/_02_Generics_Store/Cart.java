@@ -3,6 +3,9 @@ package _02_Generics_Store;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+
 
 /*
  * The Cart class is a Bounded Type Generic class
@@ -35,16 +38,25 @@ public class Cart<T extends NonFood> {
     public void showCart() {
         JFrame frame = new JFrame();
         JPanel panel = new JPanel();
-        frame.add(panel);
+        JButton button = new JButton();
+        JButton but = new JButton();
+        JLabel label = new JLabel();
+       
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         for (int i = 0; i < cart.length; i++) {
             if (cart[i] != null) {
                 panel.add(( cart[i]).getNonFood());
+                button.setText("Buy $9.99");
+               
+                panel.add(button);
             }
         }
-        frame.pack();
+        but.setText("Checkout");
+        panel.add(but);
+        frame.add(panel);
+        frame.setSize(800,800);
 
     }
 

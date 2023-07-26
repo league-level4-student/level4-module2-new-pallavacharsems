@@ -42,9 +42,11 @@ public class TernaryOperatorDemo {
          * until the response says "FIRE!".
          */
         Scanner scan = new Scanner(System.in);
-       System.out.println("What season is it (duck season/any other season)?");
-        String season = scan.nextLine();
-        
+        String season;
+      do {
+        System.out.println("What season is it (duck season/any other season)?");
+       season = scan.nextLine();
+      } while (!season.equalsIgnoreCase("duck season"));
         season=season.equals("duck season")? "FIRE!" : "rabbit season";
         
         System.out.println(season);

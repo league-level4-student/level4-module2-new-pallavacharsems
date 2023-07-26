@@ -1,6 +1,10 @@
 package _06_Console_Store;
 
-public class ConsoleStore {
+import _02_Generics_Store.Cart;
+import _02_Generics_Store.Clothing;
+import _02_Generics_Store.Toy;
+
+public class ConsoleStore extends Cart{
 
     /*
      * Write a program that simulates shopping in a store using the Scanner and
@@ -37,7 +41,17 @@ public class ConsoleStore {
      */
 
     public static void main(String[] args) {
-
+    	Cart <Clothing >clothingcart = new Cart <Clothing>();
+		Cart <Toy >toycart = new Cart <Toy>();
+		clothingcart.add(new Clothing());
+		
+		
+		
+		toycart.add(new Toy());
+		
+		
+		clothingcart.showCart();
+		toycart.showCart();
     }
 
 }

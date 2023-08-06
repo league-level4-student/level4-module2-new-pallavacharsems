@@ -6,6 +6,10 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Scanner;
+
 
 /*
  * The Cart class is a Bounded Type Generic class
@@ -15,9 +19,16 @@ import javax.swing.JLabel;
  */
 
 @SuppressWarnings("unchecked")
-public class Cart<T extends NonFood> {
+public class Cart<T extends NonFood> implements ActionListener {
     private T[] cart;
-
+    JFrame frame;
+    JPanel panel;
+    JButton button;
+    JButton but;
+    JButton bu;
+    JButton b;
+    JLabel label;
+    Scanner scan;
     public Cart() {
         cart = (T[]) new NonFood[5];
     }
@@ -36,11 +47,17 @@ public class Cart<T extends NonFood> {
 
     // Displays everything currently in the cart
     public void showCart() {
-        JFrame frame = new JFrame();
-        JPanel panel = new JPanel();
-        JButton button = new JButton();
-        JButton but = new JButton();
-        JLabel label = new JLabel();
+         frame = new JFrame();
+         panel = new JPanel();
+         button = new JButton();
+         but = new JButton();
+         bu = new JButton();
+         b = new JButton();
+         label = new JLabel();
+         scan = new Scanner(System.in);
+        System.out.println("How much money do you have?");
+        int h = scan.nextInt();
+        button.addActionListener(this);
        
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,19 +65,37 @@ public class Cart<T extends NonFood> {
         for (int i = 0; i < cart.length; i++) {
             if (cart[i] != null) {
                 panel.add(( cart[i]).getNonFood());
-                button.setText("Buy $9.99");
+                button.setText("Add to Cart $9.99");
+                but.setText("Remove from Cart");
+                bu.setText("View");
                
                 panel.add(button);
+                panel.add(but);
+                panel.add(bu);
             }
         }
-        but.setText("Checkout");
-        panel.add(but);
+        b.setText("Checkout");
+        label.setText("You have $ " +h + " to spend!");
+        
+        panel.add(b);
+        panel.add(label);
         frame.add(panel);
         frame.setSize(800,800);
-
+        
+        
     }
 
     public int length() {
         return cart.length;
+   
     }
+    
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		JButton pressed = (JButton) e.getSource();
+		if(pressed == button) {
+			
+		}
+	}
 }
